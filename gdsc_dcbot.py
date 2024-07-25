@@ -8,6 +8,13 @@ import time
 
 
 
+### ToDo ###
+# 1. 點名QRcode 生成(!sign)
+# 2. 身分組分配功能  (!role)
+# 3. 身分組名單讀取
+# 4. 出席次數記錄以及出席次數查詢  (!attend)
+# 5. 專案組更改紀錄格式，改為"stu_id,dc_id,group,attendance"  (!project)
+
 class color:
     RED = '\033[91m'
     GREEN = '\033[92m'
@@ -40,6 +47,8 @@ def read_mem():
     global server_role_mem
     normal_mem = np.genfromtxt(f'{os.getcwd()}/normal.csv', delimiter=',',encoding='utf-8',dtype=str)
     project_mem = np.genfromtxt(f'{os.getcwd()}/project.csv', delimiter=',',encoding='utf-8',dtype=str)
+    print(project_mem)
+    print(normal_mem)
     server_role_mem = [normal_mem,project_mem]
     server_role_list = ["社員","專案組"]
 
